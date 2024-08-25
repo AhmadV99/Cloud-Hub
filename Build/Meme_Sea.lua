@@ -76,3 +76,5 @@ local _main = Window:MakeTab({Name = "Main", Icon = "Home"}) do
   Funcs:Toggle(_main, "Auto Farm Level", false) 
   Funcs:Toggle(_main, "Auto Farm Nearest", false)
 end
+
+return CloudHub_env
