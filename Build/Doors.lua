@@ -75,7 +75,6 @@ local _main = Window:MakeTab({Name = "Main", Icon = "Home"}) do
   _main:AddSection({"LocalPlayer"})
   Funcs:Slider(_main, "Set Walk Speed", 0, 500, 300, 1)
   Funcs:Toggle(_main, "Enable Walk Speed", false)
-  Funcs:Toggle(_main, "No Clip", false)
   Funsc:Button(_main, "Destroy JumpScare", function()
     local JS = ReplicatedStorage:WaitForChild("Bricks"):WaitForChild("Jumpscare")
     if JS then
