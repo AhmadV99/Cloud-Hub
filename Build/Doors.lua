@@ -112,7 +112,8 @@ local _main = Window:MakeTab({Name = "Main", Icon = "Home"}) do
   _main:AddSection({"Other"})
   Funcs:Toggle(_main, "Anti-Screech", false)
   Funcs:Toggle(_main, "Auto Get Win Heartbeat", false)
-  Funcs:Toggle(_main, "Auto Dodge Rush / Ambush", false)
+  Funcs:Toggle(_main, "Auto Dodge Monster", false)
+  Funcs:Toggle(_main, "Sending Notification if Monster Is Spawned", false)
 end
 
 local _esp = Window:MakeTab({Name = "ESP", Icon = "mountain-snow"}) do
