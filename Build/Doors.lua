@@ -38,7 +38,7 @@ local Funcs = {} do
     })
   end
 
-  function Funsc:Button(Tab, Name, Funcs)
+  function Funcs:Button(Tab, Name, Funcs)
     return Tab:AddButton({
       Name = Name,
       Callback = Funcs
