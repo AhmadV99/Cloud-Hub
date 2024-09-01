@@ -107,6 +107,7 @@ local _main = Window:MakeTab({Name = "Main", Icon = "Home"}) do
   end)
   _main:AddSection({"Other"})
   Funcs:Toggle(_main, "Anti-Screech", false)
+  Funcs:Toggle(_main, "Anti-Black Void", false)
   Funcs:Toggle(_main, "Auto Get Win Heartbeat", false)
   Funcs:Toggle(_main, "Auto Dodge Monster", false)
   Funcs:Toggle(_main, "Sending Notification if Monster Is Spawned", false)
