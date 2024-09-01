@@ -24,6 +24,9 @@ local Home = Window:MakeTab({Name = "Home", Icon = "scan-face"}) do
   })
 end
 
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Lighting = game:GetService("Lighting")
+
 local Funcs = {} do
   function Funcs:Toggle(Tab, Name, Default)
     return Tab:AddToggle({
@@ -35,7 +38,7 @@ local Funcs = {} do
     })
   end
 
-  function Funcs:Button(Tab, Name, Funcs)
+  function Funsc:Button(Tab, Name, Funcs)
     return Tab:AddButton({
       Name = Name,
       Callback = Funcs
@@ -73,11 +76,40 @@ local _main = Window:MakeTab({Name = "Main", Icon = "Home"}) do
   Funcs:Slider(_main, "Set Walk Speed", 0, 500, 300, 1)
   Funcs:Toggle(_main, "Enable Walk Speed", false)
   Funcs:Toggle(_main, "No Clip", false)
+  Funsc:Button(_main, "Destroy JumpScare", function()
+    local JS = ReplicatedStorage:WaitForChild("Bricks"):WaitForChild("Jumpscare")
+    if JS then
+      JS:Destroy()
+    end
+  end)
+  Funsc:Button(_main, "Full Brightness", function()
+    Lighting.Ambient = Color3.new(1, 1, 1)
+    Lighting.ColorShift_Bottom = Color3.new(1, 1, 1)
+    Lighting.ColorShift_Top = Color3.new(1, 1, 1)
+    Lighting.LightingChanged:Connect(function()
+      Lighting.Ambient = Color3.new(1, 1, 1)
+      Lighting.ColorShift_Bottom = Color3.new(1, 1, 1)
+      Lighting.ColorShift_Top = Color3.new(1, 1, 1)
+    end)
+  end)
   _main:AddSection({"Farming Doors Level"})
   Funcs:Toggle(_main, "Auto Skip Doors Level", false)
   Funcs:Toggle(_main, "Auto Play Skip Doors Level (No Cheat)", false)
-  _main:AddSection({"Doors"})
-  Funcs:Toggle(_main, "Remove Doors / Fake Doors", false)
+  _main:AddSection({"Doors Config"})
+  Funcs:Toggle(_main, "Get Faster Toggle", false)
+  Funsc:Button(_main, "Destroy Doors / Fake Doors", function()
+    for _, part in next, game:GetDescendants() do
+      if part.Name == "Door" then
+        part:Destroy()
+      elseif part.Name == "FakeDoor" then
+        part:Destroy()
+      end
+    end
+  end)
+  _main:AddSection({"Other"})
+  Funcs:Toggle(_main, "Anti-Screech", false)
+  Funcs:Toggle(_main, "Auto Get Win Heartbeat", false)
+  Funcs:Toggle(_main, "Auto Dodge Rush / Ambush", false)
 end
 
 local _esp = Window:MakeTab({Name = "ESP", Icon = "mountain-snow"}) do
