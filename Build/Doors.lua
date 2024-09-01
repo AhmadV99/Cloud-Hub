@@ -75,13 +75,13 @@ local _main = Window:MakeTab({Name = "Main", Icon = "Home"}) do
   _main:AddSection({"LocalPlayer"})
   Funcs:Slider(_main, "Set Walk Speed", 0, 500, 300, 1)
   Funcs:Toggle(_main, "Enable Walk Speed", false)
-  Funsc:Button(_main, "Destroy JumpScare", function()
+  Funcs:Button(_main, "Destroy JumpScare", function()
     local JS = ReplicatedStorage:WaitForChild("Bricks"):WaitForChild("Jumpscare")
     if JS then
       JS:Destroy()
     end
   end)
-  Funsc:Button(_main, "Full Brightness", function()
+  Funcs:Button(_main, "Full Brightness", function()
     Lighting.Ambient = Color3.new(1, 1, 1)
     Lighting.ColorShift_Bottom = Color3.new(1, 1, 1)
     Lighting.ColorShift_Top = Color3.new(1, 1, 1)
@@ -96,7 +96,7 @@ local _main = Window:MakeTab({Name = "Main", Icon = "Home"}) do
   Funcs:Toggle(_main, "Auto Play Skip Doors Level (No Cheat)", false)
   _main:AddSection({"Doors Config"})
   Funcs:Toggle(_main, "Get Faster Toggle", false)
-  Funsc:Button(_main, "Destroy Doors / Fake Doors", function()
+  Funcs:Button(_main, "Destroy Doors / Fake Doors", function()
     for _, part in next, game:GetDescendants() do
       if part.Name == "Door" then
         part:Destroy()
