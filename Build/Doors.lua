@@ -105,10 +105,6 @@ local _main = Window:MakeTab({Name = "Main", Icon = "Home"}) do
       end
     end
   end)
-  _main:AddSection({"Safe Mode"})
-  Funcs:Slider(_main, "Check Health To Return Safe", 0, 100, 60, 1)
-  Funcs:Slider(_main, "Check Health To Return Back", 0, 100, 90, 1)
-  Funcs:Toggle(_main, "Auto Safe Mode", false)
   _main:AddSection({"Other"})
   Funcs:Toggle(_main, "Anti-Screech", false)
   Funcs:Toggle(_main, "Auto Get Win Heartbeat", false)
