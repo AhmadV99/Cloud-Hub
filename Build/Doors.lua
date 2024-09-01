@@ -93,9 +93,10 @@ local _main = Window:MakeTab({Name = "Main", Icon = "Home"}) do
   end)
   _main:AddSection({"Farming Doors Level"})
   Funcs:Toggle(_main, "Auto Skip Doors Level", false)
-  Funcs:Toggle(_main, "Auto Play Skip Doors Level (No Cheat)", false)
+  Funcs:Toggle(_main, "Auto Play Skip Doors Level (No Cheat) [BETA]", false)
+  Funcs:Toggle(_main, "Auto Open Doors Level", false)
   _main:AddSection({"Doors Config"})
-  Funcs:Toggle(_main, "Get Faster Toggle", false)
+  Funcs:Toggle(_main, "Get Faster Interact", false)
   Funcs:Button(_main, "Destroy Doors / Fake Doors", function()
     for _, part in next, game:GetDescendants() do
       if part.Name == "Door" then
@@ -112,12 +113,12 @@ local _main = Window:MakeTab({Name = "Main", Icon = "Home"}) do
 end
 
 local _esp = Window:MakeTab({Name = "ESP", Icon = "mountain-snow"}) do
-  Funcs:Toggle(_main, "ESP Doors", false)
-  Funcs:Toggle(_main, "ESP Fake Doors", false)
-  Funcs:Toggle(_main, "ESP Coins", false)
-  Funcs:Toggle(_main, "ESP Item", false)
-  Funcs:Toggle(_main, "ESP Key", false)
-  Funcs:Toggle(_main, "ESP Fuse", false)
+  Funcs:Toggle(_esp, "ESP Doors", false)
+  Funcs:Toggle(_esp, "ESP Fake Doors", false)
+  Funcs:Toggle(_esp, "ESP Coins", false)
+  Funcs:Toggle(_esp, "ESP Item", false)
+  Funcs:Toggle(_esp, "ESP Key", false)
+  Funcs:Toggle(_esp, "ESP Fuse", false)
 end
 
 return CloudHub_env
