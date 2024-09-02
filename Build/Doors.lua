@@ -106,10 +106,9 @@ local _main = Window:MakeTab({Name = "Main", Icon = "Home"}) do
       end
     end
   end)
-  _main:AddSection({"Keys"})
+  _main:AddSection({"Collecter"})
   Funcs:Toggle(_main, "Auto Collect Key", false)
-  _main:AddSection({"Coins"})
-  Funcs:Toggle(_main, "Auto Collect Coins", false)
+  Funcs:Toggle(_main, "Auto Collect Item", false)
   _main:AddSection({"Other"})
   Funcs:Toggle(_main, "Anti-Screech", false)
   Funcs:Toggle(_main, "Auto Get Win Heartbeat", false)
