@@ -1,4 +1,4 @@
-local CloudHub_Lib = loadstring(game:HttpGet("https://cloudhub-library.surge.sh"))()
+local CloudHub_Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Cloud-Hub/main/Library/V1"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Cloud-Hub/main/Settings.lua"))()
 
 local Window = CloudHub_Lib:MakeWindow({
@@ -106,6 +106,9 @@ local _main = Window:MakeTab({Name = "Main", Icon = "Home"}) do
       end
     end
   end)
+  _main:AddSection({"Keys"})
+  Funcs:Toggle(_main, "Auto Collect Key", false)
+  Funcs:Toggle(_main, "Bring Key", false)
   _main:AddSection({"Other"})
   Funcs:Toggle(_main, "Anti-Screech", false)
   Funcs:Toggle(_main, "Auto Get Win Heartbeat", false)
