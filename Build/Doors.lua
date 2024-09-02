@@ -24,8 +24,17 @@ local Home = Window:MakeTab({Name = "Home", Icon = "scan-face"}) do
   })
 end
 
+local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Lighting = game:GetService("Lighting")
+local TeleportService = game:GetService("TeleportService")
+
+local Player = Players.LocalPlayer
+
+local _isfile = isfile or function(f)return f end
+local _isfolder = isfolder or function(f)return f end
+local _delfolder = delfolder or function(f)return f end
+local _delfile = delfile or function(f)return f end
 
 local Funcs = {} do
   function Funcs:Toggle(Tab, Name, Default)
@@ -108,7 +117,6 @@ local _main = Window:MakeTab({Name = "Main", Icon = "Home"}) do
   end)
   _main:AddSection({"Collecter"})
   Funcs:Toggle(_main, "Auto Collect Key", false)
-  Funcs:Toggle(_main, "Auto Collect Item", false)
   _main:AddSection({"Other"})
   Funcs:Toggle(_main, "Anti-Screech", false)
   Funcs:Toggle(_main, "Auto Get Win Heartbeat", false)
@@ -118,12 +126,22 @@ end
 
 local _esp = Window:MakeTab({Name = "ESP", Icon = "mountain-snow"}) do
   Funcs:Toggle(_esp, "ESP Doors", false)
-  Funcs:Toggle(_esp, "ESP Coins", false)
   Funcs:Toggle(_esp, "ESP Lever", false)
   Funcs:Toggle(_esp, "ESP Key", false)
   Funcs:Toggle(_esp, "ESP Fuse", false)
   Funcs:Toggle(_esp, "ESP Chest", false)
   Funcs:Toggle(_esp, "ESP Locker", false)
+end
+
+local _settings = Window:MakeTab({Name = "Settings", Icon = "settings"}) do
+  Funcs:Button(_main, "Reset Script Setting", function()
+    if _isfile("Cloud Hub | Doors.lua") then
+      _delfile("Cloud Hub | Doors.lua")
+    end
+  end)
+  Funcs:Button(_main, "Rejoin", function()
+    TeleportService:Teleport(game.PlaceId, Player)
+  end)
 end
 
 return CloudHub_env
