@@ -120,7 +120,7 @@ end
 local _esp = Window:MakeTab({Name = "ESP", Icon = "mountain-snow"}) do
   Funcs:Toggle(_esp, "ESP Doors", false)
   Funcs:Toggle(_esp, "ESP Coins", false)
-  Funcs:Toggle(_esp, "ESP Item", false)
+  Funcs:Toggle(_esp, "ESP Lever", false)
   Funcs:Toggle(_esp, "ESP Key", false)
   Funcs:Toggle(_esp, "ESP Fuse", false)
 end
