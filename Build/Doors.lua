@@ -123,6 +123,8 @@ local _esp = Window:MakeTab({Name = "ESP", Icon = "mountain-snow"}) do
   Funcs:Toggle(_esp, "ESP Lever", false)
   Funcs:Toggle(_esp, "ESP Key", false)
   Funcs:Toggle(_esp, "ESP Fuse", false)
+  Funcs:Toggle(_esp, "ESP Chest", false)
+  Funcs:Toggle(_esp, "ESP Locker", false)
 end
 
 return CloudHub_env
