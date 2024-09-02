@@ -108,7 +108,8 @@ local _main = Window:MakeTab({Name = "Main", Icon = "Home"}) do
   end)
   _main:AddSection({"Keys"})
   Funcs:Toggle(_main, "Auto Collect Key", false)
-  Funcs:Toggle(_main, "Bring Key", false)
+  _main:AddSection({"Coins"})
+  Funcs:Toggle(_main, "Auto Collect Coins", false)
   _main:AddSection({"Other"})
   Funcs:Toggle(_main, "Anti-Screech", false)
   Funcs:Toggle(_main, "Auto Get Win Heartbeat", false)
@@ -118,7 +119,6 @@ end
 
 local _esp = Window:MakeTab({Name = "ESP", Icon = "mountain-snow"}) do
   Funcs:Toggle(_esp, "ESP Doors", false)
-  Funcs:Toggle(_esp, "ESP Fake Doors", false)
   Funcs:Toggle(_esp, "ESP Coins", false)
   Funcs:Toggle(_esp, "ESP Item", false)
   Funcs:Toggle(_esp, "ESP Key", false)
